@@ -1,0 +1,39 @@
+﻿<Window x:Class="HistoriasUsuario.RegistrarClienteWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HistoriasUsuario"
+        mc:Ignorable="d"
+        Title="RegistrarClienteWindow" Height="450" Width="800">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Text="Nombre:" Grid.Row="0" Margin="0,5"/>
+        <TextBox x:Name="NombreTextBox" Grid.Row="0" Margin="80,5,0,5" HorizontalAlignment="Stretch"/>
+
+        <TextBlock Text="Teléfono:" Grid.Row="1" Margin="0,5"/>
+        <TextBox x:Name="TelefonoTextBox" Grid.Row="1" Margin="80,5,0,5" HorizontalAlignment="Stretch"/>
+
+        <TextBlock Text="Correo:" Grid.Row="2" Margin="0,5"/>
+        <TextBox x:Name="CorreoTextBox" Grid.Row="2" Margin="80,5,0,5" HorizontalAlignment="Stretch"/>
+
+        <Button Content="Registrar Cliente" Grid.Row="3" Margin="0,10,0,10" Click="RegistrarCliente_Click"/>
+
+        <ListView x:Name="ClientesListView" Grid.Row="4">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Nombre" DisplayMemberBinding="{Binding Nombre}" Width="100"/>
+                    <GridViewColumn Header="Teléfono" DisplayMemberBinding="{Binding Telefono}" Width="100"/>
+                    <GridViewColumn Header="Correo" DisplayMemberBinding="{Binding Correo}" Width="150"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
